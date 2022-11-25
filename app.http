@@ -49,12 +49,16 @@ Content-Type: application/json
 }
 
 ###
-put http://localhost:3000/user/Adam Richard/
+//Update the user Details
+put http://localhost:3000/user/1/
 Content-Type: application/json
 
 {
+    "user_id":1,
     "name":"Dattu",
-  "username":"JoeBiden",
+    "username":"Dattatreya",
+    "password":"datta",
+    "gender":"Male",
 }
 
 
