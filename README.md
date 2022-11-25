@@ -6,6 +6,8 @@ CRUD Operations:
     
 //User Table
 
+
+
 Column	    Type
 
 user_id	    INTEGER
@@ -21,11 +23,17 @@ gender	    TEXT
 
 //Follower Table
 
+
+
 Column	            Type
 
 follower_id	        INTEGER
+
 follower_user_id	INTEGER
+
 following_user_id	INTEGER
+
+
 
 
 //Tweet Table
@@ -43,10 +51,16 @@ date_time	DATETIME
 Column	    Type
 
 reply_id	INTEGER
+
 tweet_id	INTEGER
+
 reply	    TEXT
+
 user_id	    INTEGER
+
 date_time	DATETIME
+
+
 
 
 //Like Table
@@ -54,11 +68,19 @@ date_time	DATETIME
 Column	    Type
 
 like_id	    INTEGER
+
 tweet_id	INTEGER
+
 user_id	    INTEGER
+
 date_time	DATETIME
 
+
+
+
 //Sample Valid User Credentials
+
+
 
 {
   "username":"JoeBiden",
