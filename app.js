@@ -101,6 +101,7 @@ const authenticateToken = (request, response, next) => {
 app.get("/user/following/", authenticateToken, async (request, response) => {
   const { username } = request;
   const userIdQuery = `SELECT user_id FROM user WHERE username = '${username}'`;
+
   const getUserId = await database.get(userIdQuery);
 
   const getFollowingQuery = `SELECT following_user_id FROM follower WHERE follower_user_id = ${getUserId.user_id}`;
@@ -176,19 +177,22 @@ app.get("/user/tweets/", authenticateToken, async (request, response) => {
 });
 
 //Update The user Details
-app.put("/user/:name/", authenticateToken, async (request, response) => {
-  const { name } = request.params;
+app.put("/user/:userId/", authenticateToken, async (request, response) => {
+  const { userId } = request.params;
   const userDetails = request.body;
-  const { name, username } = userDetails;
+  const { user_id, name, username, password, gender } = userDetails;
 
   const updateUserDetailsQuery = `
       UPDATE
         user
       SET
+      user_id=${user_id},
         name=${name},
         username=${username},
+        password=${password},
+        gender=${gender}
       WHERE
-        name = ${name};`;
+        user_id = ${userId};`;
 
   await db.run(updateUserDetailsQuery);
   response.send("User Details updated successfully");
