@@ -9,9 +9,13 @@ CRUD Operations:
 Column	    Type
 
 user_id	    INTEGER
+
 name	    TEXT
+
 username	TEXT
+
 password	TEXT
+
 gender	    TEXT
 
 
