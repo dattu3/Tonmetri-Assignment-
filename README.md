@@ -1,7 +1,8 @@
 CRUD Operations:
     
     
-    A basic project with Authentication and perform CRUD operations on the following tables in the given database using NodeJS
+    A basic project with Authentication and perform CRUD operations on the following tables
+    in the given database using NodeJS
     
     
 //User Table
